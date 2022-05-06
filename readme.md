@@ -15,3 +15,11 @@ php -d display_errors -S localhost:8000 -t public/
 `php vendor/bin/php-cs-fixer fix --dry-run --diff`
 
 `php vendor/bin/php-cs-fixer fix`
+
+
+Ajout d'un script "run-server" qui permet de lancer le serveur php sans limite de temps d'execution `composer run-server`
+
+
+ajout des script : `test:cs` et `fix:cs`
+
+test:cs n'est pas fini
