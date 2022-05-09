@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Database\MyPdo;
 use Html\WebPage;
 
-require_once '../vendor/autoload.php';
+#require_once '../vendor/autoload.php';
 
 $webPage = new WebPage();
 
