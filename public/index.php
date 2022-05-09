@@ -26,6 +26,6 @@ $stmt->execute();
 
 while (($ligne = $stmt->fetch()) !== false) {
     $string = WebPage::escapeString("{$ligne['name']}");
-    $webPage->appendContent("<p>$string\n");
+    $webPage->appendContent("<p> <a href='artist.php?artistId={$ligne['id']}'>$string\n");
 }
 echo $webPage->toHTML();
