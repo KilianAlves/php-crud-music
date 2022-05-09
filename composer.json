@@ -22,13 +22,13 @@
     },
     "scripts": {
         "run-server": [
-            "@php -d display_errors -S localhost:8000 -t public/"
+            "APP_DIR=\"$PWD\" php -d display_errors -S localhost:8000 -t public/"
         ],
         "test:cs": [
-            ""
+            "php vendor/bin/php-cs-fixer fix --dry-run --diff"
         ],
         "fix:cs": [
-            "$ tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src"
+            "php vendor/bin/php-cs-fixer fix"
         ]
     },
     "config": {

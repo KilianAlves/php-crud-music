@@ -22,4 +22,7 @@ Ajout d'un script "run-server" qui permet de lancer le serveur php sans limite d
 
 ajout des script : `test:cs` et `fix:cs`
 
-test:cs n'est pas fini
+
+## Configuration de la base de données
+
+le fichier .mypdo.ini permet de remplacer la commande `MyPDO::setConfiguration`
