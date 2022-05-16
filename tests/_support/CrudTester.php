@@ -1,6 +1,8 @@
 <?php
 
-namespace Tests;
+namespace Tests\Crud;
+
+use Tests\_generated\CrudTesterActions;
 
 /**
  * Inherited Methods
@@ -19,7 +21,7 @@ namespace Tests;
 */
 class CrudTester extends \Codeception\Actor
 {
-    use _generated\CrudTesterActions;
+    use CrudTesterActions;
 
     /**
      * Define custom actions here
