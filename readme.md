@@ -23,6 +23,11 @@ Ajout d'un script "run-server" qui permet de lancer le serveur php sans limite d
 ajout des script : `test:cs` et `fix:cs`
 
 
+la commande `test:codecept` execute les tests codeception
+
+La command `test` lancé via `composer test` permet de lancer les commande `test:cs` et `test:codecept` en une fois
+
 ## Configuration de la base de données
 
 le fichier .mypdo.ini permet de remplacer la commande `MyPDO::setConfiguration`
+

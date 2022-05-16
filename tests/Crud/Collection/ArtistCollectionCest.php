@@ -1,8 +1,11 @@
 <?php
+
 namespace Tests\Crud\Collection;
+
 use Entity\Artist;
 use Entity\Collection\ArtistCollection;
 use Tests\CrudTester;
+
 class ArtistCollectionCest
 {
     public function findAll(CrudTester $I)

@@ -41,10 +41,11 @@
             "php vendor/bin/codecept run Crud"
         ],
         "test:codecept": [
-
+            "php vendor/bin/codecept run"
         ],
         "test": [
-            
+            "@composer test:cs",
+            "@composer test:codecept"
         ]
     },
     "config": {
