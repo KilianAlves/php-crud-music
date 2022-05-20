@@ -4,7 +4,7 @@ namespace Tests\Crud\Collection;
 
 use Entity\Artist;
 use Entity\Collection\ArtistCollection;
-use Tests\Crud\CrudTester;
+use Tests\CrudTester;
 
 class ArtistCollectionCest
 {

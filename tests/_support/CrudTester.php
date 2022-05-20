@@ -1,8 +1,6 @@
 <?php
 
-namespace Tests\Crud;
-
-use Tests\_generated\CrudTesterActions;
+namespace Tests;
 
 /**
  * Inherited Methods
@@ -18,10 +16,10 @@ use Tests\_generated\CrudTesterActions;
  * @method void pause()
  *
  * @SuppressWarnings(PHPMD)
-*/
+ */
 class CrudTester extends \Codeception\Actor
 {
-    use CrudTesterActions;
+    use _generated\CrudTesterActions;
 
     /**
      * Define custom actions here
