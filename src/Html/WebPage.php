@@ -84,7 +84,7 @@ class WebPage
 
     public static function getLastModification(): string
     {
-        echo "Dernière modification : " . date("F d Y H:i:s.", getlastmod());
+        return "Dernière modification : " . date("F d Y H:i:s.", getlastmod());
     }
 
     public static function escapeString(string $string): string
