@@ -4,25 +4,39 @@ declare(strict_types=1);
 
 use Entity\Artist;
 use Entity\Collection\AlbumCollection;
+use Entity\Exception\EntityNotFoundException;
 use Html\AppWebPage;
 use Html\WebPage;
 
 #require_once '../vendor/autoload.php';
 
 
-if (!isset($_GET["artistId"]) && !is_int($_GET["artistId"])) {
+if (!isset($_GET["artistId"]) || !ctype_digit($_GET["artistId"])) {
     header('Location: /');
-    exit;
+    exit();
 }
+
+
 
 $artistId = $_GET["artistId"];
 
 $artistId = intval($artistId);
 
+try {
+    $searchArtist = Artist::findById($artistId);
+} catch (EntityNotFoundException $e) {
+    http_response_code(404);
+    exit();
+}
+
+
 $artist = Artist::findById($artistId);
+
 $AlbumNameYear = AlbumCollection::findByArtistId($artistId);
 
-$webPage = new AppWebPage($artist->getName()); #crée page web avec titre en nom
+$webPage = new AppWebPage(); #crée page web avec titre en nom
+$name = WebPage::escapeString("{$artist->getName()}");
+$webPage->setTitle("Albums de $name");
 
 $webPage->appendContent("<div class='list'>"); #div
 
@@ -32,11 +46,11 @@ foreach ($AlbumNameYear as $album) {
     $nameAlbum = WebPage::escapeString("{$album->getName()}");
     $webPage->appendContent("<div class='album'>");
     $webPage->appendContent("<div class='album__year'>");
-    $webPage->appendContent("<p>$yearAlbum\n");
-    $webPage->appendContent("</div>");
+    $webPage->appendContent("<p>$yearAlbum");
+    $webPage->appendContent("</div>\n");
     $webPage->appendContent("<div class='album__name'>");
-    $webPage->appendContent("<p>$nameAlbum\n");
-    $webPage->appendContent("</div>");
+    $webPage->appendContent("<p>$nameAlbum");
+    $webPage->appendContent("</div>\n");
     $webPage->appendContent("</div>");
 }
 

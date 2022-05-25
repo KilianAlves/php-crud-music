@@ -4,7 +4,7 @@ namespace Entity;
 
 use Database\MyPdo;
 use Entity\Collection\AlbumCollection;
-use Entity\Exception\EntityNotFoundException\EntityNotFoundException;
+use Entity\Exception\EntityNotFoundException;
 use PDO;
 
 class Artist
@@ -44,14 +44,13 @@ class Artist
         $artist = $AlbumEtDate->fetch();
 
         if ($artist === false) {
-            throw new EntityNotFoundException("Artist with id {$id} not found");
+            throw new EntityNotFoundException("Artist with id $id not found");
         }
         return $artist;
     }
 
-    public function getAlbums()
+    public function getAlbums(): ?array
     {
-        $albums = AlbumCollection::findByArtistId($this->getId());
-        return $albums;
+        return AlbumCollection::findByArtistId($this->getId());
     }
 }

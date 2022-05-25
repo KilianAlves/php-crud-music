@@ -31,3 +31,4 @@ La command `test` lancé via `composer test` permet de lancer les commande `test
 
 le fichier .mypdo.ini permet de remplacer la commande `MyPDO::setConfiguration`
 
+commande `test` execute les test browse aussi maintenant

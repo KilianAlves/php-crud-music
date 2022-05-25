@@ -30,7 +30,7 @@ class AppWebPage extends WebPage
                     {$this->getBody()}
                 </main>
                 <footer class="footer">
-                    <p>{$lastUpdate}</p>
+                    <p>$lastUpdate</p>
                 </footer>
             </body>
         </html>

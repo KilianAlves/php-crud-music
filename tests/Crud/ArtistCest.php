@@ -3,7 +3,7 @@
 namespace Tests\Crud;
 
 use Entity\Artist;
-use Entity\Exception\EntityNotFoundException\EntityNotFoundException;
+use Entity\Exception\EntityNotFoundException;
 use Tests\CrudTester;
 
 class ArtistCest

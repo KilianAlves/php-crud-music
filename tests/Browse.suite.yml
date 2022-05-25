@@ -1,3 +1,4 @@
+actor: BrowseTester
 modules:
     enabled:
         - \Tests\Helper\Browse

@@ -46,6 +46,9 @@
         "test": [
             "@composer test:cs",
             "@composer test:codecept"
+        ],
+        "test:browse": [
+            "php vendor/bin/codecept run Browse"
         ]
     },
     "config": {
